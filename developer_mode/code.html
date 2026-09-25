@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { secondary: "#adc6ff", "on-tertiary-container": "#84ff9c", "surface-container-low": "#1c1b1d", tertiary: "#4ae176", "secondary-container": "#0566d9", "on-secondary-fixed": "#001a42", surface: "#131315", "primary-fixed": "#eaddff", "on-background": "#e5e1e4", "tertiary-fixed-dim": "#4ae176", "on-secondary-container": "#e6ecff", "surface-variant": "#353437", primary: "#d2bbff", "surface-container-high": "#2a2a2c", "on-primary": "#3f008e", "inverse-on-surface": "#313032", "on-surface-variant": "#ccc3d8", "error-container": "#93000a", "on-tertiary": "#003915", "primary-container": "#7c3aed", "on-primary-fixed-variant": "#5a00c6", "tertiary-fixed": "#6bff8f", outline: "#958da1", "on-secondary-fixed-variant": "#004395", "primary-fixed-dim": "#d2bbff", "on-tertiary-fixed": "#002109", "surface-bright": "#39393b", error: "#ffb4ab", "secondary-fixed": "#d8e2ff", "surface-tint": "#d2bbff", "surface-dim": "#131315", "surface-container-highest": "#353437", "on-secondary": "#002e6a", "on-tertiary-fixed-variant": "#005321", "inverse-primary": "#732ee4", "on-surface": "#e5e1e4", "tertiary-container": "#007733", "surface-container-lowest": "#0e0e10", "outline-variant": "#4a4455", "on-primary-fixed": "#25005a", "surface-container": "#201f22", "secondary-fixed-dim": "#adc6ff", "inverse-surface": "#e5e1e4", "on-error": "#690005", background: "#131315", "on-primary-container": "#ede0ff", "on-error-container": "#ffdad6" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { gutter: "0.75rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem", margin: "1rem", "space-lg": "1rem" }, fontFamily: { "title-sm": ["Inter"], "caption-medium": ["Inter"], "body-medium": ["Inter"], display: ["Inter"], caption: ["Inter"], "label-code": ["JetBrains Mono"], "headline-1": ["Inter"], body: ["Inter"], "headline-2": ["Inter"] }, fontSize: { "title-sm": ["16px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "500" }], "caption-medium": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "500" }], "body-medium": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }], display: ["32px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "700" }], caption: ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "label-code": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "500" }], "headline-1": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }], body: ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-2": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-body text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:text-primary transition-colors bg-surface-container-high/40 shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="DesignFlow AI Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WJywaiCf2YviOxyJIukAccEhq5frxJrld9C1cGpte4hSa3wxv3zZvBy3GTYEe7m-kEgRiPQG4pfmqypU3O0RYC7mlgVqn3HieChtvIj5OqsESGPGYNbFOovD9WpanAYH0bSHbadxx1Yiwt-Ae66Ffv3QORP1HJXY06p2S2TY941x7aUVFzAoSb6Oa_LAcPtAqpB3ghnT18DU-LfkX50Idb16wlFRa0f9wBHj7vm1ifGu7KC1q_LLwEcak"/><h1 class="font-title-sm text-title-sm text-on-surface truncate">Ux Planner</h1></div><div class="flex items-center gap-space-sm shrink-0"><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface bg-surface-container-high/40 transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkWHSuVvC33OpoFx4GSN3AkIYXULZoRVuLpjynVO7tfWfz_HVwpHOJBR5UrAeFAGHdNWbk46Uk4HP-h4w37y8lZ_2-8oPQ9bZPD9ynt_FURAxFgEfme4pvfFo9LRwkimO5tw_WQhRQkH7RSCyvMgP7In-bYOW2tJ1cLBhwS1uoarmHalDiTbYecqW8LQYyu6RyuBMZkeoOnJGwIOGBsBfY85mhYoykT6X5e1_00q0FMGkSIItCV3Yw"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Top Quick Actions & Context Banner -->
+<div class="px-margin pt-space-md pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code text-label-code text-on-surface-variant tracking-wider uppercase">Engine v4.2 • Synced</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-9 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center gap-space-xs transition-all active:scale-95 shadow-sm" id="copyAllBtn">
+<span class="material-symbols-outlined text-[18px] text-secondary">content_copy</span>
+<span class="font-caption-medium text-caption-medium">Copy</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center gap-space-xs transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">ios_share</span>
+<span class="font-caption-medium text-caption-medium">Export</span>
+</button>
+</div>
+</div>
+<!-- Tech Stack Configuration Matrix -->
+<section class="px-margin mt-space-sm flex flex-col gap-space-md">
+<!-- Framework Segmented Switcher -->
+<div class="p-1 rounded-xl bg-surface-container-lowest flex items-center gap-1 overflow-x-auto no-scrollbar shadow-inner">
+<button class="tech-tab active-tab flex-1 min-w-[90px] py-1.5 px-space-sm rounded-lg bg-surface-container-high text-primary font-caption-medium text-caption-medium flex items-center justify-center gap-1.5 shadow-sm transition-all" data-tab="rn">
+<span class="material-symbols-outlined text-[16px]">phone_iphone</span>
+<span>React Native</span>
+</button>
+<button class="tech-tab flex-1 min-w-[90px] py-1.5 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface font-caption-medium text-caption-medium flex items-center justify-center gap-1.5 transition-all" data-tab="next">
+<span class="material-symbols-outlined text-[16px]">web</span>
+<span>Next.js</span>
+</button>
+<button class="tech-tab flex-1 min-w-[80px] py-1.5 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface font-caption-medium text-caption-medium flex items-center justify-center gap-1.5 transition-all" data-tab="flutter">
+<span class="material-symbols-outlined text-[16px]">flutter</span>
+<span>Flutter</span>
+</button>
+<button class="tech-tab flex-1 min-w-[100px] py-1.5 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface font-caption-medium text-caption-medium flex items-center justify-center gap-1.5 transition-all" data-tab="tailwind">
+<span class="material-symbols-outlined text-[16px]">css</span>
+<span>Tailwind HTML</span>
+</button>
+</div>
+<!-- Language & Styling Pills Matrix -->
+<div class="flex items-center justify-between gap-space-sm">
+<!-- Language Pill Toggle -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-lowest rounded-lg">
+<button class="lang-opt px-2.5 py-1 rounded bg-surface-container text-primary font-label-code text-label-code shadow-xs transition-colors">TypeScript</button>
+<button class="lang-opt px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-colors">JavaScript</button>
+</div>
+<!-- Styling Pill Toggle -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-lowest rounded-lg">
+<button class="style-opt px-2.5 py-1 rounded bg-surface-container text-secondary font-label-code text-label-code shadow-xs transition-colors">NativeWind</button>
+<button class="style-opt px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-colors">StyleSheet</button>
+</div>
+</div>
+</section>
+<!-- Component Selector Bar -->
+<section class="px-margin mt-space-lg">
+<div class="relative bg-surface-container-low rounded-xl p-space-md flex items-center justify-between gap-space-md shadow-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px] text-primary">widgets</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-medium text-body-medium text-on-surface truncate">RestaurantCard.tsx</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-tertiary-container font-label-code text-[10px]">Ready</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant truncate">Auto-generated with typed props &amp; memo</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="font-label-code text-label-code text-secondary px-2 py-1 rounded-md bg-surface-container-high">12 Total</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">unfold_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Code Window -->
+<section class="px-margin mt-space-md flex flex-col">
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest shadow-xl flex flex-col">
+<!-- Window Top Chrome -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary/70"></span>
+<span class="ml-2 font-label-code text-[11px] text-on-surface-variant/80">components/RestaurantCard.tsx</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-[10px] text-outline">1.2 KB</span>
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface transition-colors" id="toggleWrapBtn" title="Toggle Wrap">
+<span class="material-symbols-outlined text-[14px]">wrap_text</span>
+</button>
+</div>
+</div>
+<!-- Code Syntax Body -->
+<div class="p-space-md font-label-code text-[12px] leading-5 text-on-surface overflow-x-auto bg-surface-container-lowest">
+<pre class="leading-relaxed"><code><span class="text-primary-fixed">import</span> React <span class="text-primary-fixed">from</span> <span class="text-tertiary-fixed-dim">'react'</span>;
+<span class="text-primary-fixed">import</span> { View, Text, Image, TouchableOpacity } <span class="text-primary-fixed">from</span> <span class="text-tertiary-fixed-dim">'react-native'</span>;
+
+<span class="text-primary-fixed">export const</span> <span class="text-secondary font-semibold">FoodCard</span> = ({ title, price, discount, rating, image }) =&gt; {
+  <span class="text-primary-fixed">return</span> (
+    &lt;<span class="text-secondary font-medium">View</span> <span class="text-primary">className</span>=<span class="text-tertiary-fixed-dim">"bg-[#18181B] rounded-2xl p-4 shadow-lg"</span>&gt;
+      &lt;<span class="text-secondary font-medium">Image</span> 
+        <span class="text-primary">source</span>={{ <span class="text-primary">uri</span>: image }} 
+        <span class="text-primary">className</span>=<span class="text-tertiary-fixed-dim">"w-full h-36 rounded-xl object-cover"</span> 
+      /&gt;
+      &lt;<span class="text-secondary font-medium">View</span> <span class="text-primary">className</span>=<span class="text-tertiary-fixed-dim">"flex-row justify-between items-center mt-3"</span>&gt;
+        &lt;<span class="text-secondary font-medium">Text</span> <span class="text-primary">className</span>=<span class="text-tertiary-fixed-dim">"text-white font-semibold text-base"</span>&gt;
+          {title}
+        &lt;/<span class="text-secondary font-medium">Text</span>&gt;
+        &lt;<span class="text-secondary font-medium">Text</span> <span class="text-primary">className</span>=<span class="text-tertiary-fixed-dim">"text-[#8B5CF6] font-bold text-base"</span>&gt;
+          ${price}
+        &lt;/<span class="text-secondary font-medium">Text</span>&gt;
+      &lt;/<span class="text-secondary font-medium">View</span>&gt;
+    &lt;/<span class="text-secondary font-medium">View</span>&gt;
+  );
+};</code></pre>
+</div>
+<!-- Code Micro Actions Bar -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1.5 px-space-sm rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-caption-medium text-caption-medium flex items-center justify-center gap-1.5 transition-colors" id="copySnippetBtn">
+<span class="material-symbols-outlined text-[16px] text-secondary">copy_all</span>
+<span>Copy Snippet</span>
+</button>
+<button class="flex-1 py-1.5 px-space-sm rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-caption-medium text-caption-medium flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>Download</span>
+</button>
+<button class="flex-1 py-1.5 px-space-sm rounded-lg bg-primary-container hover:opacity-90 text-on-primary-container font-caption-medium text-caption-medium flex items-center justify-center gap-1.5 transition-all shadow-md" id="explainBtn">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">auto_awesome</span>
+<span>Explain</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Live Sandbox & Preview Canvas -->
+<section class="px-margin mt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">play_circle</span>
+<span class="font-headline-2 text-headline-2 text-on-surface">Live Preview Sandbox</span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded-full">Interactive Mock</span>
+</div>
+<!-- Sandbox Container Frame -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-lg relative overflow-hidden">
+<!-- Ambient subtle grid watermark -->
+<div class="absolute inset-0 bg-radial from-primary/5 via-transparent to-transparent pointer-events-none"></div>
+<!-- Rendered High-Fidelity FoodCard Component Preview -->
+<div class="w-full max-w-[340px] bg-surface-container-low rounded-2xl p-space-md shadow-2xl relative transition-transform active:scale-[0.99]">
+<!-- Component Image Placeholder -->
+<div class="relative w-full h-36 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Artisan wood-fired pizza with vibrant green basil, melted mozzarella, and fresh heirloom cherry tomatoes sitting on a rustic stone counter, lit with warm moody restaurant cinematic lighting, ultra sharp focus and professional culinary photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdXZnaoG1Mfw8n5xZ5yLd-WwFHA7e3O549T4rR9W9NNfEXBeOZyNDzgt4pRHGoLuBaJbwvKqSmqYkiZqhUntYUv27N3chHDibGw71Z-OMl5yCOLt6xmaKnI5jzWi_HCK5IbzQ0O0OMKfuoO-4yirR1WE1qX6bhMVEvXbGHR15XXmI3yClxiVfexO7TJSBLtnA4OOVEI3MXRCQmOd966mapIQyDMYhxRxpz5Daxb69dIbpNaH6hSggZ"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-amber-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption-medium text-caption-medium text-on-surface">4.9</span>
+<span class="font-caption text-[10px] text-on-surface-variant">(128)</span>
+</div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-code text-[11px] font-bold">
+            -20% OFF
+          </div>
+</div>
+<!-- Component Content Info -->
+<div class="mt-space-md flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-sm text-title-sm text-on-surface truncate">Truffle Basilico Crust</h3>
+<p class="font-caption text-caption text-on-surface-variant truncate">Wood-fired sourdough, bufala, fresh thyme</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-2 text-headline-2 text-primary font-bold">$18.50</span>
+</div>
+</div>
+<!-- Component Action Pills -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<span class="font-caption text-caption">15-20 min</span>
+</div>
+<button class="h-8 px-space-md rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary font-caption-medium text-caption-medium flex items-center gap-1 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Full Codebase & Bundle Export Card -->
+<section class="px-margin mt-space-xl">
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col gap-space-md shadow-xl relative overflow-hidden">
+<!-- Decorative background accent glow -->
+<div class="absolute -top-12 -right-12 w-36 h-36 bg-primary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/30 flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[28px] text-primary">folder_zip</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-2 text-headline-2 text-on-surface truncate">Full Application Bundle</h2>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">
+            Production package ready for deployment. Includes TypeScript definitions, state models &amp; design tokens.
+          </p>
+</div>
+</div>
+<!-- Quick Specs Matrix Chips -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">layers</span>
+<span class="font-caption-medium text-caption-medium text-on-surface">8 Screens Built</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">category</span>
+<span class="font-caption-medium text-caption-medium text-on-surface">12 Reusable UI Units</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">palette</span>
+<span class="font-caption-medium text-caption-medium text-on-surface">Tokens &amp; Tailwinds</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-amber-400">verified</span>
+<span class="font-caption-medium text-caption-medium text-on-surface">Zero Lint Warnings</span>
+</div>
+</div>
+<!-- Main Action Export CTA Button -->
+<button class="mt-space-xs w-full h-12 rounded-xl bg-primary-container hover:opacity-95 text-on-primary-container font-body-medium text-body-medium font-semibold flex items-center justify-center gap-space-sm shadow-lg active:scale-[0.98] transition-all" id="generateZipBtn">
+<span class="material-symbols-outlined text-[22px]">terminal</span>
+<span>Generate &amp; Export Full Codebase (.zip)</span>
+</button>
+</div>
+</section>
+<!-- Interactive Feedback Toast -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300 px-space-md py-space-sm rounded-full bg-surface-container-highest/90 backdrop-blur-md shadow-2xl flex items-center gap-2" id="toast">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
+<span class="font-caption-medium text-caption-medium text-on-surface" id="toastMsg">Snippet copied to clipboard</span>
+</div>
+</div>
+<script>
+  (function() {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    let toastTimeout;
+
+    function showToast(message) {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // Copy interactions
+    const copySnippetBtn = document.getElementById('copySnippetBtn');
+    if (copySnippetBtn) {
+      copySnippetBtn.addEventListener('click', () => {
+        showToast('Component code copied!');
+      });
+    }
+
+    const copyAllBtn = document.getElementById('copyAllBtn');
+    if (copyAllBtn) {
+      copyAllBtn.addEventListener('click', () => {
+        showToast('All 12 components copied to clipboard!');
+      });
+    }
+
+    const explainBtn = document.getElementById('explainBtn');
+    if (explainBtn) {
+      explainBtn.addEventListener('click', () => {
+        showToast('AI analysis: Functional component with Tailwind and optimized dynamic pricing.');
+      });
+    }
+
+    const generateZipBtn = document.getElementById('generateZipBtn');
+    if (generateZipBtn) {
+      generateZipBtn.addEventListener('click', () => {
+        generateZipBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Packaging Codebase...</span>';
+        setTimeout(() => {
+          generateZipBtn.innerHTML = '<span class="material-symbols-outlined text-[22px]">terminal</span><span>Generate & Export Full Codebase (.zip)</span>';
+          showToast('designflow-app-bundle.zip downloaded!');
+        }, 1200);
+      });
+    }
+
+    // Framework tabs micro interaction
+    const tabs = document.querySelectorAll('.tech-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-surface-container-high', 'text-primary', 'shadow-sm');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.add('bg-surface-container-high', 'text-primary', 'shadow-sm');
+        tab.classList.remove('text-on-surface-variant');
+        showToast(`Target stack switched to ${tab.textContent.trim()}`);
+      });
+    });
+
+    // Language pills micro interaction
+    const langOpts = document.querySelectorAll('.lang-opt');
+    langOpts.forEach(btn => {
+      btn.addEventListener('click', () => {
+        langOpts.forEach(b => {
+          b.classList.remove('bg-surface-container', 'text-primary', 'shadow-xs');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container', 'text-primary', 'shadow-xs');
+        btn.classList.remove('text-on-surface-variant');
+        showToast(`Language: ${btn.textContent.trim()}`);
+      });
+    });
+
+    // Style pills micro interaction
+    const styleOpts = document.querySelectorAll('.style-opt');
+    styleOpts.forEach(btn => {
+      btn.addEventListener('click', () => {
+        styleOpts.forEach(b => {
+          b.classList.remove('bg-surface-container', 'text-secondary', 'shadow-xs');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container', 'text-secondary', 'shadow-xs');
+        btn.classList.remove('text-on-surface-variant');
+        showToast(`Styling: ${btn.textContent.trim()}`);
+      });
+    });
+  })();
+</script></main></body></html>

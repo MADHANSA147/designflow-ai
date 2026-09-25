@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { secondary: "#adc6ff", "on-tertiary-container": "#84ff9c", "surface-container-low": "#1c1b1d", tertiary: "#4ae176", "secondary-container": "#0566d9", "on-secondary-fixed": "#001a42", surface: "#131315", "primary-fixed": "#eaddff", "on-background": "#e5e1e4", "tertiary-fixed-dim": "#4ae176", "on-secondary-container": "#e6ecff", "surface-variant": "#353437", primary: "#d2bbff", "surface-container-high": "#2a2a2c", "on-primary": "#3f008e", "inverse-on-surface": "#313032", "on-surface-variant": "#ccc3d8", "error-container": "#93000a", "on-tertiary": "#003915", "primary-container": "#7c3aed", "on-primary-fixed-variant": "#5a00c6", "tertiary-fixed": "#6bff8f", outline: "#958da1", "on-secondary-fixed-variant": "#004395", "primary-fixed-dim": "#d2bbff", "on-tertiary-fixed": "#002109", "surface-bright": "#39393b", error: "#ffb4ab", "secondary-fixed": "#d8e2ff", "surface-tint": "#d2bbff", "surface-dim": "#131315", "surface-container-highest": "#353437", "on-secondary": "#002e6a", "on-tertiary-fixed-variant": "#005321", "inverse-primary": "#732ee4", "on-surface": "#e5e1e4", "tertiary-container": "#007733", "surface-container-lowest": "#0e0e10", "outline-variant": "#4a4455", "on-primary-fixed": "#25005a", "surface-container": "#201f22", "secondary-fixed-dim": "#adc6ff", "inverse-surface": "#e5e1e4", "on-error": "#690005", background: "#131315", "on-primary-container": "#ede0ff", "on-error-container": "#ffdad6" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { gutter: "0.75rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem", margin: "1rem", "space-lg": "1rem" }, fontFamily: { "title-sm": ["Inter"], "caption-medium": ["Inter"], "body-medium": ["Inter"], display: ["Inter"], caption: ["Inter"], "label-code": ["JetBrains Mono"], "headline-1": ["Inter"], body: ["Inter"], "headline-2": ["Inter"] }, fontSize: { "title-sm": ["16px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "500" }], "caption-medium": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "500" }], "body-medium": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }], display: ["32px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "700" }], caption: ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "label-code": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "500" }], "headline-1": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }], body: ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-2": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-body text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="DesignFlow AI Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WJywaiCf2YviOxyJIukAccEhq5frxJrld9C1cGpte4hSa3wxv3zZvBy3GTYEe7m-kEgRiPQG4pfmqypU3O0RYC7mlgVqn3HieChtvIj5OqsESGPGYNbFOovD9WpanAYH0bSHbadxx1Yiwt-Ae66Ffv3QORP1HJXY06p2S2TY941x7aUVFzAoSb6Oa_LAcPtAqpB3ghnT18DU-LfkX50Idb16wlFRa0f9wBHj7vm1ifGu7KC1q_LLwEcak"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse shrink-0"></span><span class="font-label-code text-label-code text-tertiary uppercase tracking-wider">Live Sync</span></div><h1 class="font-title-sm text-title-sm text-on-surface truncate">Create</h1></div></div><div class="flex items-center gap-space-sm shrink-0"><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface bg-surface-container-high/40 transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkWHSuVvC33OpoFx4GSN3AkIYXULZoRVuLpjynVO7tfWfz_HVwpHOJBR5UrAeFAGHdNWbk46Uk4HP-h4w37y8lZ_2-8oPQ9bZPD9ynt_FURAxFgEfme4pvfFo9LRwkimO5tw_WQhRQkH7RSCyvMgP7In-bYOW2tJ1cLBhwS1uoarmHalDiTbYecqW8LQYyu6RyuBMZkeoOnJGwIOGBsBfY85mhYoykT6X5e1_00q0FMGkSIItCV3Yw"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin space-y-space-lg pb-6">
+<!-- Glowing Ambient Aura & Inspiration Backdrop -->
+<div class="relative w-full rounded-2xl p-space-lg bg-surface-container overflow-hidden shadow-xl">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-36 h-36 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Header Section -->
+<div class="relative z-10 flex items-start justify-between gap-space-md mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-code text-label-code text-primary uppercase tracking-wider">Generative Canvas v2.4</span>
+</div>
+<h2 class="font-headline-1 text-headline-1 text-on-surface">What are you designing?</h2>
+<p class="font-body text-body text-on-surface-variant mt-1">Describe your concept, paste a PRD, or start from raw multimodal artifacts.</p>
+</div>
+<!-- Logo Monogram Vector Badge -->
+<div class="shrink-0 w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center shadow-inner">
+<svg class="w-7 h-7 drop-shadow-[0_0_8px_rgba(124,58,237,0.8)]" fill="none" viewbox="0 0 100 100">
+<path d="M26 28 C26 28 68 28 72 40 C76 52 64 68 36 68 L36 82" stroke="url(#logoGlowGrad)" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+<circle cx="70" cy="28" fill="#d2bbff" r="8"></circle>
+<path d="M54 48 H76 M65 37 V59" stroke="#0566d9" stroke-linecap="round" stroke-width="6"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="logoGlowGrad" x1="20" x2="80" y1="20" y2="80">
+<stop stop-color="#c084fc"></stop>
+<stop offset="0.6" stop-color="#7c3aed"></stop>
+<stop offset="1" stop-color="#2563eb"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- Source Multimodal Mode Selector -->
+<div class="relative z-10 flex items-center gap-space-xs overflow-x-auto pb-1 no-scrollbar" id="modeSelector">
+<button class="mode-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-primary-container text-on-primary font-caption-medium text-caption-medium shadow-md transition-all active:scale-95 shrink-0" data-mode="idea" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back_ios_new</span>
+<span>Idea</span>
+</button>
+<button class="mode-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-caption-medium text-caption-medium transition-all active:scale-95 shrink-0" data-mode="screenshot" type="button">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+<span>Screenshot</span>
+</button>
+<button class="mode-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-caption-medium text-caption-medium transition-all active:scale-95 shrink-0" data-mode="sketch" type="button">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span>Sketch</span>
+</button>
+<button class="mode-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-caption-medium text-caption-medium transition-all active:scale-95 shrink-0" data-mode="prd" type="button">
+<span class="material-symbols-outlined text-[16px]">article</span>
+<span>PRD / Spec</span>
+</button>
+</div>
+<!-- Main Input Textarea Area -->
+<div class="relative z-10 mt-space-md rounded-xl bg-surface-container-lowest p-space-md shadow-2xl transition-all">
+<div class="flex items-center justify-between pb-space-xs mb-2">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-code text-label-code">
+<span class="material-symbols-outlined text-[13px] animate-spin">auto_awesome</span>
+<span>Multimodal context ready</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors active:scale-90" id="micBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px]">attach_file</span>
+</button>
+</div>
+</div>
+<textarea class="w-full bg-transparent text-on-surface font-body text-body placeholder:text-on-surface-variant/50 resize-none focus:outline-none" id="promptInput" placeholder="Describe the product experience, desired features, tone, audience..." rows="4">Create a food delivery app for college students with affordable budget meals, late-night campus dorm delivery, live GPS tracking, and split-bill UPI checkout.</textarea>
+<div class="flex items-center justify-between pt-space-xs mt-2">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-code text-label-code text-on-surface-variant">Tokens: ~138 / 4096</span>
+</div>
+<button class="font-caption text-caption text-on-surface-variant hover:text-on-surface transition-colors" id="clearPrompt">Clear</button>
+</div>
+</div>
+</div>
+<!-- Workspace Configuration Card -->
+<div class="flex flex-col gap-space-md rounded-2xl bg-surface-container-low p-space-lg shadow-lg">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-2 text-headline-2 text-on-surface">Configuration</h3>
+<span class="font-label-code text-label-code text-secondary px-2 py-0.5 rounded-full bg-secondary-container/30">Auto-tuned</span>
+</div>
+<!-- Platform Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-caption-medium text-caption-medium text-on-surface-variant uppercase tracking-wider">Target Platform</label>
+<div class="grid grid-cols-3 gap-space-xs p-1 rounded-xl bg-surface-container-lowest" id="platformSelector">
+<button class="platform-btn flex items-center justify-center gap-1.5 py-2 rounded-lg bg-surface-container-high text-on-surface font-body-medium text-body-medium shadow-sm transition-all" data-val="mobile" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">smartphone</span>
+<span>Mobile</span>
+</button>
+<button class="platform-btn flex items-center justify-center gap-1.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-medium text-body-medium transition-all" data-val="tablet" type="button">
+<span class="material-symbols-outlined text-[18px]">tablet_mac</span>
+<span>Tablet</span>
+</button>
+<button class="platform-btn flex items-center justify-center gap-1.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-medium text-body-medium transition-all" data-val="web" type="button">
+<span class="material-symbols-outlined text-[18px]">laptop</span>
+<span>Web</span>
+</button>
+</div>
+</div>
+<!-- Target Audience -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-caption-medium text-caption-medium text-on-surface-variant uppercase tracking-wider">Target Audience &amp; Context</label>
+<div class="flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container-lowest text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant shrink-0">group</span>
+<input class="bg-transparent w-full text-on-surface font-body text-body focus:outline-none" type="text" value="College students, campus dorm residents, budget diners"/>
+</div>
+</div>
+<!-- Design Style Matrix Picker -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-caption-medium text-caption-medium text-on-surface-variant uppercase tracking-wider">Design Style DNA</label>
+<span class="font-caption text-caption text-primary" id="selectedStyleLabel">Modern Clean</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs" id="styleOptions">
+<!-- Modern (Selected) -->
+<div class="style-card active cursor-pointer p-space-md rounded-xl bg-surface-container-highest flex items-center justify-between shadow-md" data-style="Modern Clean">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-medium text-body-medium text-on-surface">Modern</span>
+<span class="font-caption text-caption text-on-surface-variant">Sleek, fluid, glow</span>
+</div>
+</div>
+<span class="style-check material-symbols-outlined text-[20px] text-primary">check_circle</span>
+</div>
+<!-- Minimal -->
+<div class="style-card cursor-pointer p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 hover:opacity-100 transition-opacity" data-style="Minimalist Pure">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">crop_square</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-medium text-body-medium text-on-surface">Minimal</span>
+<span class="font-caption text-caption text-on-surface-variant">Quiet, Swiss mono</span>
+</div>
+</div>
+<span class="style-check hidden material-symbols-outlined text-[20px] text-primary">check_circle</span>
+</div>
+<!-- Premium Dark -->
+<div class="style-card cursor-pointer p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 hover:opacity-100 transition-opacity" data-style="Premium Dark">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">dark_mode</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-medium text-body-medium text-on-surface">Dark Mode</span>
+<span class="font-caption text-caption text-on-surface-variant">OLED, Obsidian</span>
+</div>
+</div>
+<span class="style-check hidden material-symbols-outlined text-[20px] text-primary">check_circle</span>
+</div>
+<!-- Playful Neo -->
+<div class="style-card cursor-pointer p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 hover:opacity-100 transition-opacity" data-style="Playful Neo">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">palette</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-medium text-body-medium text-on-surface">Playful Neo</span>
+<span class="font-caption text-caption text-on-surface-variant">Bouncy, vibrant</span>
+</div>
+</div>
+<span class="style-check hidden material-symbols-outlined text-[20px] text-primary">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Deliverables Projection Banner -->
+<div class="p-space-md rounded-xl bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-high flex items-center gap-space-md shadow-md">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-caption-medium text-caption-medium text-primary">Synthesized Deliverables Blueprint</span>
+<p class="font-caption text-caption text-on-surface-variant truncate">UX Specs • 8 Flow Screens • Obsidian Tokens • Atomic UI Kit</p>
+</div>
+</div>
+<!-- Staged AI Simulation Pipeline Panel -->
+<div class="rounded-2xl bg-surface-container-low p-space-lg flex flex-col gap-space-md shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary">memory</span>
+<span class="font-title-sm text-title-sm text-on-surface">Autonomous Agent Execution</span>
+</div>
+<button class="flex items-center gap-1 font-caption-medium text-caption-medium text-primary px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant transition-colors" id="toggleSimBtn">
+<span id="simStateLabel">Run Demo</span>
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+</div>
+<!-- Progress Pipeline Steps -->
+<div class="flex flex-col gap-space-sm" id="progressSteps">
+<!-- Step 1 -->
+<div class="step-row flex items-center justify-between p-2.5 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-space-md">
+<div class="step-icon w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-medium text-body-medium text-on-surface">1. User needs &amp; heuristic scoping</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary">Ready</span>
+</div>
+<!-- Step 2 -->
+<div class="step-row flex items-center justify-between p-2.5 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-space-md">
+<div class="step-icon w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-medium text-body-medium text-on-surface">2. Information architecture &amp; flows (8 screens)</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary">Parsed</span>
+</div>
+<!-- Step 3 -->
+<div class="step-row flex items-center justify-between p-2.5 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-space-md">
+<div class="step-icon w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+</div>
+<span class="font-body-medium text-body-medium text-on-surface">3. Obsidian Synth design tokens</span>
+</div>
+<span class="font-label-code text-label-code text-primary animate-pulse">Generating</span>
+</div>
+<!-- Step 4 -->
+<div class="step-row flex items-center justify-between p-2.5 rounded-xl bg-surface-container-lowest opacity-60">
+<div class="flex items-center gap-space-md">
+<div class="step-icon w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+</div>
+<span class="font-body-medium text-body-medium text-on-surface-variant">4. Mobile UI system &amp; micro-interactions</span>
+</div>
+<span class="font-label-code text-label-code text-outline">Queued</span>
+</div>
+</div>
+</div>
+<!-- Primary Sticky Bottom Action Container -->
+<div class="sticky bottom-2 z-30 pt-2 pb-1">
+<div class="flex flex-col items-center gap-space-sm p-space-md rounded-2xl bg-surface-container-high/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary font-headline-2 text-headline-2 flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(124,58,237,0.45)] hover:shadow-[0_0_32px_rgba(124,58,237,0.7)] active:scale-[0.98] transition-all" id="mainGenBtn" type="button">
+<span class="material-symbols-outlined text-[22px]">auto_fix_high</span>
+<span>Generate Product Plan</span>
+</button>
+<div class="flex items-center justify-between w-full px-space-xs">
+<button class="font-caption-medium text-caption-medium text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+<span>Browse template examples</span>
+</button>
+<span class="font-label-code text-label-code text-on-surface-variant">Est. 14s runtime</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initMultimodalScreen() {
+    // Mode tabs interactive switch
+    const modeTabs = document.querySelectorAll('.mode-tab');
+    modeTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        modeTabs.forEach(t => {
+          t.className = 'mode-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-caption-medium text-caption-medium transition-all active:scale-95 shrink-0';
+        });
+        tab.className = 'mode-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-primary-container text-on-primary font-caption-medium text-caption-medium shadow-md transition-all active:scale-95 shrink-0';
+      });
+    });
+
+    // Platform switcher
+    const platformBtns = document.querySelectorAll('.platform-btn');
+    platformBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        platformBtns.forEach(b => {
+          b.className = 'platform-btn flex items-center justify-center gap-1.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-medium text-body-medium transition-all';
+          const icon = b.querySelector('.material-symbols-outlined');
+          if (icon) icon.className = 'material-symbols-outlined text-[18px] text-on-surface-variant';
+        });
+        btn.className = 'platform-btn flex items-center justify-center gap-1.5 py-2 rounded-lg bg-surface-container-high text-on-surface font-body-medium text-body-medium shadow-sm transition-all';
+        const activeIcon = btn.querySelector('.material-symbols-outlined');
+        if (activeIcon) activeIcon.className = 'material-symbols-outlined text-[18px] text-primary';
+      });
+    });
+
+    // Style picker
+    const styleCards = document.querySelectorAll('.style-card');
+    const styleLabel = document.getElementById('selectedStyleLabel');
+    styleCards.forEach(card => {
+      card.addEventListener('click', () => {
+        styleCards.forEach(c => {
+          c.className = 'style-card cursor-pointer p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 hover:opacity-100 transition-opacity';
+          const chk = c.querySelector('.style-check');
+          if (chk) chk.classList.add('hidden');
+        });
+        card.className = 'style-card active cursor-pointer p-space-md rounded-xl bg-surface-container-highest flex items-center justify-between shadow-md';
+        const activeChk = card.querySelector('.style-check');
+        if (activeChk) activeChk.classList.remove('hidden');
+        if (styleLabel) styleLabel.textContent = card.dataset.style;
+      });
+    });
+
+    // Clear prompt micro-action
+    const clearBtn = document.getElementById('clearPrompt');
+    const promptInput = document.getElementById('promptInput');
+    if (clearBtn && promptInput) {
+      clearBtn.addEventListener('click', () => {
+        promptInput.value = '';
+        promptInput.focus();
+      });
+    }
+
+    // Mic recording mock toggle
+    const micBtn = document.getElementById('micBtn');
+    let isRecording = false;
+    if (micBtn) {
+      micBtn.addEventListener('click', () => {
+        isRecording = !isRecording;
+        if (isRecording) {
+          micBtn.classList.add('text-error', 'bg-error-container/20', 'animate-pulse');
+        } else {
+          micBtn.classList.remove('text-error', 'bg-error-container/20', 'animate-pulse');
+        }
+      });
+    }
+
+    // Live AI Agent generation simulation runner
+    const toggleSimBtn = document.getElementById('toggleSimBtn');
+    const simStateLabel = document.getElementById('simStateLabel');
+    let isSimulating = false;
+    let simInterval = null;
+
+    if (toggleSimBtn) {
+      toggleSimBtn.addEventListener('click', () => {
+        isSimulating = !isSimulating;
+        if (isSimulating) {
+          simStateLabel.textContent = 'Simulating...';
+          toggleSimBtn.classList.add('text-tertiary');
+          let step = 0;
+          const rows = document.querySelectorAll('#progressSteps .step-row');
+          simInterval = setInterval(() => {
+            step++;
+            if (step > 4) {
+              clearInterval(simInterval);
+              simStateLabel.textContent = 'Completed';
+              return;
+            }
+            if (rows[step - 1]) {
+              rows[step - 1].classList.remove('opacity-60');
+              const icon = rows[step - 1].querySelector('.step-icon');
+              if (icon) {
+                icon.className = 'step-icon w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center';
+                icon.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>';
+              }
+            }
+          }, 800);
+        } else {
+          clearInterval(simInterval);
+          simStateLabel.textContent = 'Run Demo';
+          toggleSimBtn.classList.remove('text-tertiary');
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.6)]" data-active-classes="text-primary font-caption-medium"><div class="flex items-center justify-around h-16 px-space-xs relative"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-caption text-caption">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#"><span class="material-symbols-outlined text-[22px]">folder_open</span><span class="font-caption text-caption">Projects</span></a><div class="relative -top-3 flex items-center justify-center px-space-xs"><a aria-current="page" class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-container shadow-[0_0_20px_-2px_rgba(124,58,237,0.5)] active:scale-95 transition-transform text-primary font-caption-medium" data-path="create" href="#"><span class="material-symbols-outlined text-[26px]">add</span></a></div><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="components" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-caption text-caption">Library</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-caption text-caption">Profile</span></a></div></nav></body></html>

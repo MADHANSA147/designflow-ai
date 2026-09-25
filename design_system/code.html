@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { secondary: "#adc6ff", "on-tertiary-container": "#84ff9c", "surface-container-low": "#1c1b1d", tertiary: "#4ae176", "secondary-container": "#0566d9", "on-secondary-fixed": "#001a42", surface: "#131315", "primary-fixed": "#eaddff", "on-background": "#e5e1e4", "tertiary-fixed-dim": "#4ae176", "on-secondary-container": "#e6ecff", "surface-variant": "#353437", primary: "#d2bbff", "surface-container-high": "#2a2a2c", "on-primary": "#3f008e", "inverse-on-surface": "#313032", "on-surface-variant": "#ccc3d8", "error-container": "#93000a", "on-tertiary": "#003915", "primary-container": "#7c3aed", "on-primary-fixed-variant": "#5a00c6", "tertiary-fixed": "#6bff8f", outline: "#958da1", "on-secondary-fixed-variant": "#004395", "primary-fixed-dim": "#d2bbff", "on-tertiary-fixed": "#002109", "surface-bright": "#39393b", error: "#ffb4ab", "secondary-fixed": "#d8e2ff", "surface-tint": "#d2bbff", "surface-dim": "#131315", "surface-container-highest": "#353437", "on-secondary": "#002e6a", "on-tertiary-fixed-variant": "#005321", "inverse-primary": "#732ee4", "on-surface": "#e5e1e4", "tertiary-container": "#007733", "surface-container-lowest": "#0e0e10", "outline-variant": "#4a4455", "on-primary-fixed": "#25005a", "surface-container": "#201f22", "secondary-fixed-dim": "#adc6ff", "inverse-surface": "#e5e1e4", "on-error": "#690005", background: "#131315", "on-primary-container": "#ede0ff", "on-error-container": "#ffdad6" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { gutter: "0.75rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem", margin: "1rem", "space-lg": "1rem" }, fontFamily: { "title-sm": ["Inter"], "caption-medium": ["Inter"], "body-medium": ["Inter"], display: ["Inter"], caption: ["Inter"], "label-code": ["JetBrains Mono"], "headline-1": ["Inter"], body: ["Inter"], "headline-2": ["Inter"] }, fontSize: { "title-sm": ["16px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "500" }], "caption-medium": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "500" }], "body-medium": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }], display: ["32px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "700" }], caption: ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "label-code": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "500" }], "headline-1": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }], body: ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-2": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-body text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:text-primary transition-colors bg-surface-container-high/40 shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="DesignFlow AI Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WJywaiCf2YviOxyJIukAccEhq5frxJrld9C1cGpte4hSa3wxv3zZvBy3GTYEe7m-kEgRiPQG4pfmqypU3O0RYC7mlgVqn3HieChtvIj5OqsESGPGYNbFOovD9WpanAYH0bSHbadxx1Yiwt-Ae66Ffv3QORP1HJXY06p2S2TY941x7aUVFzAoSb6Oa_LAcPtAqpB3ghnT18DU-LfkX50Idb16wlFRa0f9wBHj7vm1ifGu7KC1q_LLwEcak"/><h1 class="font-title-sm text-title-sm text-on-surface truncate">Ux Planner</h1></div><div class="flex items-center gap-space-sm shrink-0"><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface bg-surface-container-high/40 transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkWHSuVvC33OpoFx4GSN3AkIYXULZoRVuLpjynVO7tfWfz_HVwpHOJBR5UrAeFAGHdNWbk46Uk4HP-h4w37y8lZ_2-8oPQ9bZPD9ynt_FURAxFgEfme4pvfFo9LRwkimO5tw_WQhRQkH7RSCyvMgP7In-bYOW2tJ1cLBhwS1uoarmHalDiTbYecqW8LQYyu6RyuBMZkeoOnJGwIOGBsBfY85mhYoykT6X5e1_00q0FMGkSIItCV3Yw"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full px-margin pb-space-xl space-y-space-lg">
+<!-- Sub-bar Context & Version Header -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-headline-2 text-headline-2 text-on-surface truncate">Design DNA / System</span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-code text-label-code shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        v1.4 Synthesized
+      </span>
+</div>
+<button aria-label="Version history" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+<!-- AI Generation Banner -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-lowest p-space-md shadow-md">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary-container/25 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-wider">Multimodal Synthesis</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">CampusEats PRD v2</span>
+</div>
+<h2 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Obsidian Synth UI System</h2>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Synthesized deep-canvas token architecture &amp; tactile kinetic kit.</p>
+</div>
+</div>
+<!-- Quick Category Segmented Toggles -->
+<div class="flex items-center justify-between p-1 bg-surface-container-lowest rounded-lg">
+<button class="flex-1 py-1.5 text-center font-caption-medium text-caption-medium rounded bg-surface-container-high text-on-surface shadow-sm transition-all" id="tab-tokens" onclick="switchCategory('tokens')">Tokens</button>
+<button class="flex-1 py-1.5 text-center font-caption-medium text-caption-medium rounded text-on-surface-variant hover:text-on-surface transition-all" id="tab-components" onclick="switchCategory('components')">Components</button>
+<button class="flex-1 py-1.5 text-center font-caption-medium text-caption-medium rounded text-on-surface-variant hover:text-on-surface transition-all" id="tab-typography" onclick="switchCategory('typography')">Typography</button>
+<button class="flex-1 py-1.5 text-center font-caption-medium text-caption-medium rounded text-on-surface-variant hover:text-on-surface transition-all" id="tab-export" onclick="switchCategory('export')">Export</button>
+</div>
+</div>
+</div>
+<!-- Palette & Color Swatches -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">palette</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Color Tokens &amp; WCAG Contrast</h3>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">11 Tokens</span>
+</div>
+<!-- Swatches Bento Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Primary Core Swatch -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col space-y-space-sm shadow-sm relative overflow-hidden group">
+<div class="h-12 w-full rounded-lg bg-primary-container flex items-end justify-between p-2 shadow-sm">
+<span class="font-label-code text-[10px] text-on-primary font-semibold px-1.5 py-0.5 rounded bg-surface-container-lowest/40 backdrop-blur-sm">PRIMARY</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-code text-[9px] font-bold">AAA • 7.8</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-medium text-body-medium text-on-surface font-medium">Electric Violet</span>
+<div class="flex items-center justify-between text-on-surface-variant font-label-code text-label-code mt-0.5">
+<span>#7C3AED</span>
+<span class="text-primary text-[10px]">100% token</span>
+</div>
+</div>
+</div>
+<!-- Accent Swatch -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col space-y-space-sm shadow-sm relative overflow-hidden">
+<div class="h-12 w-full rounded-lg bg-secondary-container flex items-end justify-between p-2 shadow-sm">
+<span class="font-label-code text-[10px] text-on-secondary-container font-semibold px-1.5 py-0.5 rounded bg-surface-container-lowest/40 backdrop-blur-sm">ACCENT</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-code text-[9px] font-bold">AAA • 8.1</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-medium text-body-medium text-on-surface font-medium">Electric Azure</span>
+<div class="flex items-center justify-between text-on-surface-variant font-label-code text-label-code mt-0.5">
+<span>#3B82F6</span>
+<span class="text-secondary text-[10px]">Interactive</span>
+</div>
+</div>
+</div>
+<!-- Surface Depth Spectrum (Full Width Mini Matrix) -->
+<div class="col-span-2 bg-surface-container-low p-space-md rounded-xl flex flex-col space-y-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption-medium text-caption-medium text-on-surface">Base Obsidian Surfaces</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">Ocular Relief Calibrated</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col items-center bg-surface-container-lowest p-2 rounded-lg text-center">
+<div class="w-full h-4 rounded bg-surface mb-1"></div>
+<span class="font-label-code text-[10px] text-on-surface">Base 01</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">#09090B</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-lowest p-2 rounded-lg text-center">
+<div class="w-full h-4 rounded bg-surface-container-low mb-1"></div>
+<span class="font-label-code text-[10px] text-on-surface">Base 02</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">#111113</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-lowest p-2 rounded-lg text-center">
+<div class="w-full h-4 rounded bg-surface-container mb-1"></div>
+<span class="font-label-code text-[10px] text-on-surface">Base 03</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">#18181B</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-lowest p-2 rounded-lg text-center">
+<div class="w-full h-4 rounded bg-surface-variant mb-1"></div>
+<span class="font-label-code text-[10px] text-on-surface">Hairstyle</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">#27272A</span>
+</div>
+</div>
+</div>
+<!-- Semantic Status Array -->
+<div class="col-span-2 bg-surface-container-low p-space-md rounded-xl flex flex-col space-y-space-sm shadow-sm">
+<span class="font-caption-medium text-caption-medium text-on-surface">Semantic Signals</span>
+<div class="grid grid-cols-3 gap-2">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest">
+<div class="w-3 h-3 rounded-full bg-tertiary shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-[10px] text-on-surface font-medium truncate">Success</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">#22C55E</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest">
+<div class="w-3 h-3 rounded-full bg-secondary shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-[10px] text-on-surface font-medium truncate">Notice</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">#F59E0B</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest">
+<div class="w-3 h-3 rounded-full bg-error shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-[10px] text-on-surface font-medium truncate">Critical</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">#EF4444</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Typography Scale -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">text_fields</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Typography Scale</h3>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">Inter &amp; JetBrains</span>
+</div>
+<div class="flex flex-col space-y-2 bg-surface-container-low p-space-md rounded-xl shadow-sm">
+<!-- Display -->
+<div class="flex items-baseline justify-between py-1 bg-surface-container-lowest/60 px-3 rounded-lg">
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-[10px] text-primary uppercase">Display • 32px Bold</span>
+<span class="font-display text-display text-on-surface truncate">Urban Bistro</span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant shrink-0">Hero Lead</span>
+</div>
+<!-- Headline 1 -->
+<div class="flex items-baseline justify-between py-1 bg-surface-container-lowest/60 px-3 rounded-lg">
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-[10px] text-secondary uppercase">Heading 1 • 24px Semi</span>
+<span class="font-headline-1 text-headline-1 text-on-surface truncate">Fresh Harvest Bowl</span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant shrink-0">Section H1</span>
+</div>
+<!-- Body -->
+<div class="flex items-baseline justify-between py-1.5 bg-surface-container-lowest/60 px-3 rounded-lg">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-code text-[10px] text-on-surface-variant uppercase">Body • 14px Regular</span>
+<span class="font-body text-body text-on-surface line-clamp-1">Steamed brown grain with roasted scallions &amp; citrus tahini drizzle.</span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant shrink-0">Standard</span>
+</div>
+<!-- Caption / Code -->
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest/60 px-3 rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-code text-[10px] text-tertiary uppercase">Mono • 12px</span>
+<span class="font-label-code text-label-code text-on-surface font-mono">ORDER_ID_9842F</span>
+</div>
+<span class="font-label-code text-[10px] text-on-surface-variant shrink-0">Metrics/Chips</span>
+</div>
+</div>
+</section>
+<!-- Layout & Spatial Rhythm & Corner Radius -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">view_quilt</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Layout Rhythm &amp; Curvature</h3>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">4px System</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- 4px Step Grid Chips -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col space-y-space-sm">
+<span class="font-caption-medium text-caption-medium text-on-surface">Spacing Scale</span>
+<div class="grid grid-cols-2 gap-1.5">
+<div class="flex items-center justify-between bg-surface-container-lowest px-2 py-1.5 rounded">
+<span class="font-label-code text-[10px] text-on-surface-variant">xs</span>
+<span class="font-label-code text-label-code text-primary font-bold">4px</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-2 py-1.5 rounded">
+<span class="font-label-code text-[10px] text-on-surface-variant">sm</span>
+<span class="font-label-code text-label-code text-primary font-bold">8px</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-2 py-1.5 rounded">
+<span class="font-label-code text-[10px] text-on-surface-variant">md</span>
+<span class="font-label-code text-label-code text-primary font-bold">16px</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-2 py-1.5 rounded">
+<span class="font-label-code text-[10px] text-on-surface-variant">xl</span>
+<span class="font-label-code text-label-code text-primary font-bold">24px</span>
+</div>
+</div>
+</div>
+<!-- Radius Tokens -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col space-y-space-sm">
+<span class="font-caption-medium text-caption-medium text-on-surface">Corner Radii</span>
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between bg-surface-container-lowest px-2 py-1 rounded-lg">
+<div class="flex items-center gap-1.5">
+<div class="w-3.5 h-3.5 bg-surface-variant rounded"></div>
+<span class="font-caption text-caption text-on-surface">Micro</span>
+</div>
+<span class="font-label-code text-label-code text-secondary">8px</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-2 py-1 rounded-lg">
+<div class="flex items-center gap-1.5">
+<div class="w-3.5 h-3.5 bg-surface-variant rounded-xl"></div>
+<span class="font-caption text-caption text-on-surface">Card</span>
+</div>
+<span class="font-label-code text-label-code text-secondary">16px</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-2 py-1 rounded-lg">
+<div class="flex items-center gap-1.5">
+<div class="w-3.5 h-3.5 bg-surface-variant rounded-full"></div>
+<span class="font-caption text-caption text-on-surface">Sheet</span>
+</div>
+<span class="font-label-code text-label-code text-secondary">24px</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Interactive Component Previews -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">smart_button</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Live Component Harness</h3>
+</div>
+<span class="flex items-center gap-1 font-label-code text-label-code text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+        Reactive
+      </span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col space-y-space-md shadow-md">
+<!-- Primary CTA with glowing violet border & Secondary chip -->
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 h-11 px-4 rounded-lg bg-primary-container text-on-primary font-body-medium text-body-medium font-semibold flex items-center justify-center gap-2 shadow-[0_0_18px_rgba(124,58,237,0.45)] hover:shadow-[0_0_24px_rgba(124,58,237,0.7)] active:scale-[0.98] transition-all" id="primary-cta-preview">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Deploy Flow</span>
+</button>
+<button class="h-11 px-3.5 rounded-lg bg-surface-container-high text-on-surface font-body-medium text-body-medium flex items-center gap-1.5 active:bg-surface-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">filter_vintage</span>
+<span>Ghost Pill</span>
+</button>
+</div>
+<!-- Dark elevated input with purple focus glow -->
+<div class="flex flex-col space-y-1">
+<label class="font-caption text-caption text-on-surface-variant">Elevated Context Input</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant pointer-events-none">prompt_suggestion</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-lowest text-on-surface font-body text-body placeholder:text-on-surface-variant/50 focus:outline-none focus:bg-surface-container-high focus:shadow-[0_0_0_2px_rgba(124,58,237,0.6)] transition-all" type="text" value="Add AI Dietary constraints..."/>
+</div>
+</div>
+<!-- Miniature Food Item Card Component from CampusEats PRD -->
+<div class="flex flex-col space-y-1.5">
+<span class="font-caption text-caption text-on-surface-variant">Domain Specimen: Product Entity Card</span>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-center gap-space-sm shadow-sm">
+<img class="w-16 h-16 rounded-lg object-cover shrink-0" data-alt="Vibrant gourmet poke bowl with grilled salmon, diced avocado, and edamame, photographed from top angle under cinematic studio lighting in dark atmospheric dining room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjO9OPgAPhlKvhVxGvcrkorNSL-L7SCxstj65vF7yUYZgl4RRThAif2fn-bFrml-OHo0ULA4VRrAKcD5kjEz1V4CSGYR1m9KRKUqll1JlHrE1VDVNme0ZqXcE-cacxY_bKHfMfMiO0JuaMGpyuOcSN-EtdavjyziP49ZVyPoBvDg-Fe0V3HBWKzMpvFxF9qpaIMsbtUb3T1sHzOzTcUjeUiFqKV6ZZavvwCl-8DNRYLFaYfA15NqoX"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container/30 text-tertiary-fixed font-label-code text-[10px] font-semibold">Organic • Campus Prep</span>
+<span class="font-body-medium text-body-medium font-semibold text-primary">$13.50</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface truncate font-medium">Omega Power Salmon</h4>
+<div class="flex items-center justify-between mt-1">
+<span class="font-caption text-caption text-on-surface-variant truncate">480 kcal • 32g protein</span>
+<button class="w-6 h-6 rounded bg-primary-container flex items-center justify-center text-on-primary shadow-xs">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky-styled Bottom Action Controls Stack -->
+<div class="pt-space-sm flex flex-col space-y-space-sm">
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="h-11 rounded-lg bg-surface-container-high text-on-surface font-body-medium text-body-medium flex items-center justify-center gap-2 active:bg-surface-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+<span>Customize</span>
+</button>
+<button class="h-11 rounded-lg bg-surface-container-high text-on-surface font-body-medium text-body-medium flex items-center justify-center gap-2 active:bg-surface-variant transition-colors shadow-sm" id="regen-btn" onclick="triggerRegen()">
+<span class="material-symbols-outlined text-[18px] text-tertiary" id="regen-icon">refresh</span>
+<span>Regenerate</span>
+</button>
+</div>
+<!-- Prominent Primary Deploy Button -->
+<button class="w-full h-12 rounded-xl bg-primary-container hover:bg-primary-container/90 text-on-primary font-body-medium text-body-medium font-semibold flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(124,58,237,0.5)] active:scale-[0.99] transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Apply to Project Screens</span>
+</button>
+</div>
+</div>
+<script>
+  function switchCategory(cat) {
+    const tabs = ['tokens', 'components', 'typography', 'export'];
+    tabs.forEach(t => {
+      const el = document.getElementById('tab-' + t);
+      if (t === cat) {
+        el.className = 'flex-1 py-1.5 text-center font-caption-medium text-caption-medium rounded bg-surface-container-high text-on-surface shadow-sm transition-all';
+      } else {
+        el.className = 'flex-1 py-1.5 text-center font-caption-medium text-caption-medium rounded text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    });
+  }
+
+  function triggerRegen() {
+    const icon = document.getElementById('regen-icon');
+    icon.classList.add('animate-spin');
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+    }, 900);
+  }
+</script></main></body></html>

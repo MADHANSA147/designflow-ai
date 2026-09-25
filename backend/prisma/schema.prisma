@@ -1,0 +1,596 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// -----------------------------------------------------------------------------
+// USER & AUTHENTICATION
+// -----------------------------------------------------------------------------
+model User {
+  id            String    @id @default(uuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts        Account[]
+  refreshTokens   RefreshToken[]
+  workspaceMember WorkspaceMember[]
+  workspaces      Workspace[]       @relation("WorkspaceOwner")
+
+  @@index([email])
+}
+
+model Account {
+  id                String  @id @default(uuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// -----------------------------------------------------------------------------
+// WORKSPACE & PROJECT
+// -----------------------------------------------------------------------------
+model Workspace {
+  id        String   @id @default(uuid())
+  name      String
+  ownerId   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  owner   User              @relation("WorkspaceOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+  members WorkspaceMember[]
+  projects Project[]
+
+  @@index([ownerId])
+}
+
+model WorkspaceMember {
+  id          String   @id @default(uuid())
+  workspaceId String
+  userId      String
+  role        String   @default("MEMBER") // OWNER, ADMIN, MEMBER, VIEWER
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+  @@index([userId])
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  workspaceId String
+  name        String
+  description String?
+  status      String   @default("DRAFT") // DRAFT, IN_PROGRESS, REVIEW, COMPLETED
+  isFavorite  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  productBrief  ProductBrief?
+  uxPlan        UXPlan?
+  designSystem  DesignSystem?
+  prototype     Prototype?
+  designMemory  DesignMemory?
+  
+  screens             Screen[]
+  components          Component[]
+  conversations       AIConversation[]
+  aiReviews           AIReview[]
+  accessibilityReviews AccessibilityReview[]
+  versions            ProjectVersion[]
+  generatedCode       GeneratedCode[]
+  assets              Asset[]
+  exportJobs          ExportJob[]
+
+  @@index([workspaceId])
+  @@index([createdAt])
+}
+
+// -----------------------------------------------------------------------------
+// PRODUCT UNDERSTANDING
+// -----------------------------------------------------------------------------
+model ProductBrief {
+  id             String   @id @default(uuid())
+  projectId      String   @unique
+  productType    String?
+  targetAudience String?  @db.Text
+  coreProblem    String?  @db.Text
+  solution       String?  @db.Text
+  businessGoals  String[]
+  userGoals      String[]
+  requirements   String[]
+  constraints    String[]
+  assumptions    String[]
+  toneOfVoice    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  project  Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  personas Persona[]
+  features Feature[]
+}
+
+model Persona {
+  id             String   @id @default(uuid())
+  productBriefId String
+  name           String
+  role           String
+  demographics   String?  @db.Text
+  painPoints     String[]
+  goals          String[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  productBrief ProductBrief @relation(fields: [productBriefId], references: [id], onDelete: Cascade)
+
+  @@index([productBriefId])
+}
+
+model Feature {
+  id             String   @id @default(uuid())
+  productBriefId String
+  name           String
+  description    String?  @db.Text
+  priority       String   @default("MUST_HAVE") // MUST_HAVE, SHOULD_HAVE, COULD_HAVE
+  createdAt      DateTime @default(now())
+
+  productBrief ProductBrief @relation(fields: [productBriefId], references: [id], onDelete: Cascade)
+
+  @@index([productBriefId])
+}
+
+// -----------------------------------------------------------------------------
+// UX PLANNER
+// -----------------------------------------------------------------------------
+model UXPlan {
+  id                      String   @id @default(uuid())
+  projectId               String   @unique
+  informationArchitecture String?  @db.Text // JSON string
+  userJourney             String?  @db.Text // JSON string
+  status                  String   @default("DRAFT")
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  project   Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  userFlows UserFlow[]
+}
+
+model UserFlow {
+  id          String   @id @default(uuid())
+  uxPlanId    String
+  name        String
+  description String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  uxPlan UXPlan         @relation(fields: [uxPlanId], references: [id], onDelete: Cascade)
+  nodes  UserFlowNode[]
+  edges  UserFlowEdge[]
+
+  @@index([uxPlanId])
+}
+
+model UserFlowNode {
+  id          String   @id @default(uuid())
+  userFlowId  String
+  name        String
+  description String?  @db.Text
+  nodeType    String   @default("SCREEN") // SCREEN, ACTION, DECISION
+  createdAt   DateTime @default(now())
+
+  userFlow     UserFlow       @relation(fields: [userFlowId], references: [id], onDelete: Cascade)
+  sourceEdges  UserFlowEdge[] @relation("SourceNode")
+  targetEdges  UserFlowEdge[] @relation("TargetNode")
+
+  @@index([userFlowId])
+}
+
+model UserFlowEdge {
+  id          String   @id @default(uuid())
+  userFlowId  String
+  sourceId    String
+  targetId    String
+  label       String?
+  createdAt   DateTime @default(now())
+
+  userFlow   UserFlow     @relation(fields: [userFlowId], references: [id], onDelete: Cascade)
+  sourceNode UserFlowNode @relation("SourceNode", fields: [sourceId], references: [id], onDelete: Cascade)
+  targetNode UserFlowNode @relation("TargetNode", fields: [targetId], references: [id], onDelete: Cascade)
+
+  @@index([userFlowId])
+}
+
+// -----------------------------------------------------------------------------
+// DESIGN SYSTEM & TOKENS
+// -----------------------------------------------------------------------------
+model DesignSystem {
+  id        String   @id @default(uuid())
+  projectId String   @unique
+  name      String   @default("Global System")
+  radius    String[] // JSON string array or simple values
+  shadows   String[] // JSON string array or simple values
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  project    Project           @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  colors     ColorToken[]
+  typography TypographyToken[]
+  spacing    SpacingToken[]
+}
+
+model ColorToken {
+  id             String   @id @default(uuid())
+  designSystemId String
+  name           String   // e.g., "primary-500", "surface"
+  value          String   // e.g., "#7c3aed"
+  theme          String   @default("light") // light, dark
+  createdAt      DateTime @default(now())
+
+  designSystem DesignSystem @relation(fields: [designSystemId], references: [id], onDelete: Cascade)
+
+  @@index([designSystemId])
+}
+
+model TypographyToken {
+  id             String   @id @default(uuid())
+  designSystemId String
+  name           String   // e.g., "headline-1", "body"
+  fontFamily     String
+  fontSize       String
+  fontWeight     String
+  lineHeight     String
+  letterSpacing  String?
+  createdAt      DateTime @default(now())
+
+  designSystem DesignSystem @relation(fields: [designSystemId], references: [id], onDelete: Cascade)
+
+  @@index([designSystemId])
+}
+
+model SpacingToken {
+  id             String   @id @default(uuid())
+  designSystemId String
+  name           String   // e.g., "sm", "md", "gutter"
+  value          String   // e.g., "0.5rem"
+  createdAt      DateTime @default(now())
+
+  designSystem DesignSystem @relation(fields: [designSystemId], references: [id], onDelete: Cascade)
+
+  @@index([designSystemId])
+}
+
+// -----------------------------------------------------------------------------
+// COMPONENTS & SCREENS (UI DATA MODEL)
+// -----------------------------------------------------------------------------
+model Component {
+  id          String   @id @default(uuid())
+  projectId   String
+  name        String
+  description String?
+  baseStyles  String?  @db.Text // JSON string
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  project  Project            @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  variants ComponentVariant[]
+
+  @@index([projectId])
+}
+
+model ComponentVariant {
+  id          String   @id @default(uuid())
+  componentId String
+  name        String   // e.g., "primary", "secondary", "disabled"
+  props       String   @db.Text // JSON string of specific styles/props
+  createdAt   DateTime @default(now())
+
+  component Component @relation(fields: [componentId], references: [id], onDelete: Cascade)
+
+  @@index([componentId])
+}
+
+model Screen {
+  id                 String   @id @default(uuid())
+  projectId          String
+  name               String
+  description        String?
+  layout             String   @db.Text // JSON representation of layout constraints
+  componentTree      String   @db.Text // JSON representation of the DOM/Tree structure
+  styles             String?  @db.Text // Screen level styles (JSON)
+  responsiveBehavior String?  @db.Text // Breakpoints and responsive rules (JSON)
+  interactions       String?  @db.Text // Event listeners and bindings (JSON)
+  thumbnailUrl       String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  components         ScreenComponent[]
+  sourceConnections  PrototypeConnection[] @relation("SourceScreen")
+  targetConnections  PrototypeConnection[] @relation("TargetScreen")
+  aiReviews          AIReview[]
+  accessibility      AccessibilityReview[]
+  generatedCode      GeneratedCode[]
+
+  @@index([projectId])
+}
+
+model ScreenComponent {
+  id          String   @id @default(uuid())
+  screenId    String
+  componentId String?  // Optional link to a global component
+  nodeId      String   // ID mapped within the Screen.componentTree
+  props       String   @db.Text // JSON overridden props for this instance
+  styles      String   @db.Text // JSON inline styles
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  screen    Screen  @relation(fields: [screenId], references: [id], onDelete: Cascade)
+
+  @@index([screenId])
+}
+
+// -----------------------------------------------------------------------------
+// PROTOTYPING
+// -----------------------------------------------------------------------------
+model Prototype {
+  id        String   @id @default(uuid())
+  projectId String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  project     Project               @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  connections PrototypeConnection[]
+}
+
+model PrototypeConnection {
+  id             String   @id @default(uuid())
+  prototypeId    String
+  sourceScreenId String
+  targetScreenId String
+  trigger        String   @default("CLICK") // TAP, CLICK, SWIPE, HOVER, DELAY
+  triggerNodeId  String?  // Node inside sourceScreen that triggers
+  actionType     String   @default("NAVIGATE") // NAVIGATE, BACK, MODAL, OVERLAY, EXTERNAL_LINK
+  actionData     String?  // For external links or specific modal IDs
+  animation      String   @default("INSTANT") // INSTANT, FADE, SLIDE_IN
+  createdAt      DateTime @default(now())
+
+  prototype    Prototype @relation(fields: [prototypeId], references: [id], onDelete: Cascade)
+  sourceScreen Screen    @relation("SourceScreen", fields: [sourceScreenId], references: [id], onDelete: Cascade)
+  targetScreen Screen?   @relation("TargetScreen", fields: [targetScreenId], references: [id], onDelete: Cascade)
+
+  @@index([prototypeId])
+  @@index([sourceScreenId])
+}
+
+// -----------------------------------------------------------------------------
+// AI & MEMORY
+// -----------------------------------------------------------------------------
+model DesignMemory {
+  id                 String   @id @default(uuid())
+  projectId          String   @unique
+  brandRules         String[]
+  colors             String[]
+  typography         String[]
+  spacing            String[]
+  componentRules     String[]
+  navigationRules    String[]
+  uxPrinciples       String[]
+  userPreferences    String[]
+  aiDecisions        String[]
+  projectConstraints String[]
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model AIConversation {
+  id        String   @id @default(uuid())
+  projectId String
+  context   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  project     Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  messages    AIMessage[]
+  generations AIGeneration[]
+
+  @@index([projectId])
+}
+
+model AIMessage {
+  id             String   @id @default(uuid())
+  conversationId String
+  role           String   // USER, AI, SYSTEM
+  content        String   @db.Text
+  createdAt      DateTime @default(now())
+
+  conversation AIConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+}
+
+model AIGeneration {
+  id             String   @id @default(uuid())
+  conversationId String
+  type           String   // UX_PLAN, SCREEN, COMPONENT, CODE
+  status         String   @default("PENDING") // PENDING, PROCESSING, COMPLETED, FAILED
+  progress       Int      @default(0)
+  payload        String?  @db.Text // JSON generated content
+  error          String?  @db.Text
+  applied        Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  conversation AIConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+}
+  @@index([conversationId])
+}
+
+// -----------------------------------------------------------------------------
+// REVIEWS
+// -----------------------------------------------------------------------------
+model AIReview {
+  id        String   @id @default(uuid())
+  projectId String
+  screenId  String?
+  score     Float
+  createdAt DateTime @default(now())
+
+  project  Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  screen   Screen? @relation(fields: [screenId], references: [id], onDelete: Cascade)
+  findings ReviewFinding[]
+
+  @@index([projectId])
+  @@index([screenId])
+}
+
+model AccessibilityReview {
+  id        String   @id @default(uuid())
+  projectId String
+  screenId  String?
+  wcagLevel String   @default("AA")
+  score     Float
+  createdAt DateTime @default(now())
+
+  project  Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  screen   Screen? @relation(fields: [screenId], references: [id], onDelete: Cascade)
+  findings ReviewFinding[]
+
+  @@index([projectId])
+  @@index([screenId])
+}
+
+model ReviewFinding {
+  id                    String   @id @default(uuid())
+  aiReviewId            String?
+  accessibilityReviewId String?
+  type                  String   // ERROR, WARNING, INFO, SUGGESTION (Maps to severity)
+  category              String   @default("UX") // Navigation, Usability, Hierarchy etc
+  elementId             String?  // Associated NodeId in screen (component)
+  screenId              String?  // If it applies to a specific screen
+  problem               String   @db.Text
+  explanation           String?  @db.Text
+  recommendation        String?  @db.Text
+  rule                  String?  // WCAG or UX rule
+  currentValue          String?
+  expectedValue         String?
+  autoFixAvailable      Boolean  @default(false)
+  suggestedFix          String?  @db.Text // JSON representation of a UI patch/fix
+  confidence            Float    @default(1.0)
+  createdAt             DateTime @default(now())
+
+  aiReview            AIReview?            @relation(fields: [aiReviewId], references: [id], onDelete: Cascade)
+  accessibilityReview AccessibilityReview? @relation(fields: [accessibilityReviewId], references: [id], onDelete: Cascade)
+
+  @@index([aiReviewId])
+  @@index([accessibilityReviewId])
+}
+
+// -----------------------------------------------------------------------------
+// VERSIONING, EXPORTS & ASSETS
+// -----------------------------------------------------------------------------
+model ProjectVersion {
+  id          String   @id @default(uuid())
+  projectId   String
+  tag         String
+  description String?
+  snapshot    String   @db.Text // JSON dump of the entire project state at the time
+  createdAt   DateTime @default(now())
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@index([createdAt])
+}
+
+model GeneratedCode {
+  id        String   @id @default(uuid())
+  projectId String
+  screenId  String?
+  framework String   // REACT, VUE, SVELTE, HTML
+  code      String   @db.Text
+  createdAt DateTime @default(now())
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  screen  Screen? @relation(fields: [screenId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@index([screenId])
+}
+
+model Asset {
+  id         String   @id @default(uuid())
+  projectId  String?  // Nullable for user avatars
+  userId     String?  // To track ownership of avatars/assets outside projects
+  name       String
+  storageKey String   // The S3 object key
+  bucket     String   // The S3 bucket
+  url        String?  // E.g., CDN url if public, else use signed urls dynamically
+  type       String   // IMAGE, ICON, FONT, DOCUMENT, AVATAR, EXPORT
+  mimeType   String?
+  sizeBytes  Int?
+  createdAt  DateTime @default(now())
+
+  project Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user    User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@index([userId])
+}
+
+model ExportJob {
+  id              String   @id @default(uuid())
+  projectId       String
+  status          String   @default("PENDING") // PENDING, PROCESSING, COMPLETED, FAILED
+  format          String   // PNG, JPG, PDF, PROTOTYPE, REACT, REACT_NATIVE, FLUTTER, HTML_TAILWIND, DESIGN_SYSTEM, ZIP
+  selectedScreens String[] // Array of screen IDs, empty means all
+  progress        Int      @default(0)
+  fileUrl         String?  // The internal or signed path
+  error           String?  @db.Text
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}

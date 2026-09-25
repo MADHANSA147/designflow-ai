@@ -1,0 +1,10 @@
+node_modules
+backend
+android
+.gradle
+artifacts
+test-results
+dist
+**/.env
+**/.env.*
+server/data

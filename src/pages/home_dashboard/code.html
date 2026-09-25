@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { secondary: "#adc6ff", "on-tertiary-container": "#84ff9c", "surface-container-low": "#1c1b1d", tertiary: "#4ae176", "secondary-container": "#0566d9", "on-secondary-fixed": "#001a42", surface: "#131315", "primary-fixed": "#eaddff", "on-background": "#e5e1e4", "tertiary-fixed-dim": "#4ae176", "on-secondary-container": "#e6ecff", "surface-variant": "#353437", primary: "#d2bbff", "surface-container-high": "#2a2a2c", "on-primary": "#3f008e", "inverse-on-surface": "#313032", "on-surface-variant": "#ccc3d8", "error-container": "#93000a", "on-tertiary": "#003915", "primary-container": "#7c3aed", "on-primary-fixed-variant": "#5a00c6", "tertiary-fixed": "#6bff8f", outline: "#958da1", "on-secondary-fixed-variant": "#004395", "primary-fixed-dim": "#d2bbff", "on-tertiary-fixed": "#002109", "surface-bright": "#39393b", error: "#ffb4ab", "secondary-fixed": "#d8e2ff", "surface-tint": "#d2bbff", "surface-dim": "#131315", "surface-container-highest": "#353437", "on-secondary": "#002e6a", "on-tertiary-fixed-variant": "#005321", "inverse-primary": "#732ee4", "on-surface": "#e5e1e4", "tertiary-container": "#007733", "surface-container-lowest": "#0e0e10", "outline-variant": "#4a4455", "on-primary-fixed": "#25005a", "surface-container": "#201f22", "secondary-fixed-dim": "#adc6ff", "inverse-surface": "#e5e1e4", "on-error": "#690005", background: "#131315", "on-primary-container": "#ede0ff", "on-error-container": "#ffdad6" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { gutter: "0.75rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem", margin: "1rem", "space-lg": "1rem" }, fontFamily: { "title-sm": ["Inter"], "caption-medium": ["Inter"], "body-medium": ["Inter"], display: ["Inter"], caption: ["Inter"], "label-code": ["JetBrains Mono"], "headline-1": ["Inter"], body: ["Inter"], "headline-2": ["Inter"] }, fontSize: { "title-sm": ["16px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "500" }], "caption-medium": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "500" }], "body-medium": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }], display: ["32px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "700" }], caption: ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "label-code": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "500" }], "headline-1": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }], body: ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-2": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-body text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="DesignFlow AI Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WJywaiCf2YviOxyJIukAccEhq5frxJrld9C1cGpte4hSa3wxv3zZvBy3GTYEe7m-kEgRiPQG4pfmqypU3O0RYC7mlgVqn3HieChtvIj5OqsESGPGYNbFOovD9WpanAYH0bSHbadxx1Yiwt-Ae66Ffv3QORP1HJXY06p2S2TY941x7aUVFzAoSb6Oa_LAcPtAqpB3ghnT18DU-LfkX50Idb16wlFRa0f9wBHj7vm1ifGu7KC1q_LLwEcak"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse shrink-0"></span><span class="font-label-code text-label-code text-tertiary uppercase tracking-wider">Live Sync</span></div><h1 class="font-title-sm text-title-sm text-on-surface truncate">Home</h1></div></div><div class="flex items-center gap-space-sm shrink-0"><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface bg-surface-container-high/40 transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkWHSuVvC33OpoFx4GSN3AkIYXULZoRVuLpjynVO7tfWfz_HVwpHOJBR5UrAeFAGHdNWbk46Uk4HP-h4w37y8lZ_2-8oPQ9bZPD9ynt_FURAxFgEfme4pvfFo9LRwkimO5tw_WQhRQkH7RSCyvMgP7In-bYOW2tJ1cLBhwS1uoarmHalDiTbYecqW8LQYyu6RyuBMZkeoOnJGwIOGBsBfY85mhYoykT6X5e1_00q0FMGkSIItCV3Yw"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-xl px-margin pb-space-xl">
+<!-- Welcome Header & Primary CTA -->
+<div class="flex flex-col gap-space-md pt-space-xs">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-1 text-headline-1 text-on-surface">Good morning, Madhan</span>
+<span class="text-xl">👋</span>
+</div>
+<p class="font-body text-body text-on-surface-variant">Turn your next idea into a product.</p>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high text-primary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code text-label-code">v2.4 AI Engine</span>
+</div>
+</div>
+<button class="w-full h-12 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-on-primary font-headline-2 text-headline-2 flex items-center justify-center gap-space-sm shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Create New Project</span>
+</button>
+</div>
+<!-- Quick Action Pill Bar -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-space-xs -mx-margin px-margin no-scrollbar">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface shrink-0 active:scale-95 transition-all shadow-sm" type="button">
+<span class="text-base">💡</span>
+<span class="font-body-medium text-body-medium">From Idea</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface shrink-0 active:scale-95 transition-all shadow-sm" type="button">
+<span class="text-base">📸</span>
+<span class="font-body-medium text-body-medium">Screenshot to UI</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface shrink-0 active:scale-95 transition-all shadow-sm" type="button">
+<span class="text-base">✏️</span>
+<span class="font-body-medium text-body-medium">Sketch to UI</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface shrink-0 active:scale-95 transition-all shadow-sm" type="button">
+<span class="text-base">⚡</span>
+<span class="font-body-medium text-body-medium">Import Design</span>
+</button>
+</div>
+<!-- Continue Designing / Active Hero Card -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption-medium text-caption-medium uppercase tracking-wider text-on-surface-variant">Continue Designing</span>
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span class="font-label-code text-label-code">Synced 2m ago</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-md shadow-xl">
+<div class="absolute -right-8 -top-8 w-44 h-44 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-2 text-headline-2 text-on-surface">CampusEats</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-code text-label-code">Mobile App</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">Food delivery platform designed specifically for college students</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0">palette</span>
+</div>
+<!-- Mini Preview & Progress Matrix -->
+<div class="flex gap-space-md items-center bg-surface-container rounded-lg p-space-sm">
+<div class="relative w-20 h-24 rounded-lg overflow-hidden shrink-0 shadow-md bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="High fidelity mobile application screen for CampusEats student food delivery app, dark theme with vibrant purple neon accents, featuring college dining hall menus and dynamic meal cards on obsidian background with high contrast modern UI typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhPItqafwBwsEWLen_48HgCfJMWLOV2paDZlETTUz_PLOk9f97ukSPPbzHyH5er7KJTgwtbVKOKiaVHumE69GUMEJqh3UgBm7tZKbmSLngMuVYD5n9BHHF1hhTyO86WaVQwGGc3z3odZ7mvXOOrvmImkQi3gyjYpkMmCoHSvXWNuYc3Ze8GmbfkuOjNycwTIEcwPjmGTayqUdaOS71ZHqa8QJDlm5RAg8FIAz3Z3gOPqjh-N4lG7J2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent flex items-end p-1">
+<span class="font-label-code text-[9px] text-tertiary">Active</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-space-xs min-w-0">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-code text-label-code">8 Screens</span>
+<span class="font-label-code text-label-code text-tertiary">92% UX Health</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-tertiary rounded-full" style="width: 75%;"></div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span class="font-caption text-caption text-secondary">WCAG AAA Accessibility</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="h-10 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-space-xs active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>Open Studio</span>
+</button>
+<button class="h-10 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-space-xs active:scale-95 transition-all shadow-[0_0_16px_rgba(124,58,237,0.3)]" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>AI Review (3)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Insights & Live Recommendation Widget -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm relative overflow-hidden shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<span class="font-title-sm text-title-sm text-on-surface">AI Design Engine</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-code text-label-code">Optimal</span>
+</div>
+<p class="font-body text-body text-on-surface-variant">
+<span class="text-on-surface font-body-medium">CampusEats checkout funnel</span> can improve mobile conversion by <span class="text-tertiary font-title-sm">14%</span> by surfacing single-tap UPI and Apple Pay above card forms.
+      </p>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="text-primary font-caption-medium text-caption-medium flex items-center gap-space-xs hover:underline" type="button">
+<span>Review changes</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<span class="font-label-code text-label-code text-outline">Confidence 96%</span>
+</div>
+</div>
+<!-- Projects Section with Filter Pills -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-2 text-headline-2 text-on-surface">Recent Projects</h2>
+<span class="font-caption-medium text-caption-medium text-primary cursor-pointer">View All (18)</span>
+</div>
+<!-- Segmented Interactive Filter Tabs -->
+<div class="flex p-1 rounded-lg bg-surface-container-low gap-1" id="project-filters">
+<button class="flex-1 py-1.5 rounded-md font-caption-medium text-caption-medium text-center bg-surface-container-high text-on-surface transition-all shadow-sm" onclick="filterProjects('all', this)" type="button">All</button>
+<button class="flex-1 py-1.5 rounded-md font-caption-medium text-caption-medium text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="filterProjects('favorites', this)" type="button">Favorites</button>
+<button class="flex-1 py-1.5 rounded-md font-caption-medium text-caption-medium text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="filterProjects('recent', this)" type="button">Recent</button>
+</div>
+<!-- Projects Grid (2 columns on mobile) -->
+<div class="grid grid-cols-2 gap-gutter" id="projects-container">
+<!-- Project 1 -->
+<div class="flex flex-col rounded-xl bg-surface-container-low p-space-sm gap-space-sm shadow-md transition-transform active:scale-[0.98]">
+<div class="relative h-28 rounded-lg overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Dark aesthetic mobile app interface for CampusEats with sleek food category buttons, neon violet accents, and modern glass card design elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyorxjPAiZKw6xNiGS7wpENstm0MxJJZFQAJoxClGlHHQ8Ag5SZ8ggyzi_RcMDyLe3bNQOts39ajd5qzF-OG8mM3X-_mJ1qAn1HICfE0eH5qp6E4tRScUf_3M3hGybHYxcl38a1jv1MWBwRtLGxBmj6suXwVdLAHY1xm6z_x8u2WMc6DyBjCSW50FDt5ZF3PGIMaimbSDWn98-gNWXhk-xlsJXF_bBVT4w-y0C0zKQWWt-DKjB2FyH"/>
+<button class="absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center text-on-surface-variant active:scale-90" onclick="toggleFavorite(event, this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">favorite</span>
+</button>
+<span class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[9px] text-secondary">8 screens</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">CampusEats</span>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs">
+<span class="font-label-code text-label-code">Modern Dark</span>
+<span class="font-label-code text-label-code">12m ago</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="flex flex-col rounded-xl bg-surface-container-low p-space-sm gap-space-sm shadow-md transition-transform active:scale-[0.98]">
+<div class="relative h-28 rounded-lg overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Energetic purple fitness tracking mobile app UI called FitnessFlow displaying daily workout streaks, heart rate ring diagrams, and biometric stat cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1kATvEK1bsw-FVbORlxjlxtrTgpO9myKaNarU4QSQiL-peosRBB7p0lKlTmLS3ajuZWdxaGW9URrQPAopi_0G8hOuxBs2JdJmONeIIfqLpyQhi0tjDxqKMAMOxVMRq26uGeZeK_blCJrdgsKPGZkV0JCJzkX9uzugASt94o2eYZrLocE0aqawKvRSmT5B88sue-61ASjheNCLtr2_o3WsnXjUsiaS6lcgzIOp5kJhLJB5tt7oMjG1"/>
+<button class="absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center text-on-surface-variant active:scale-90" onclick="toggleFavorite(event, this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">favorite</span>
+</button>
+<span class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[9px] text-secondary">12 screens</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">FitnessFlow</span>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs">
+<span class="font-label-code text-label-code">Energetic UI</span>
+<span class="font-label-code text-label-code">2h ago</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="flex flex-col rounded-xl bg-surface-container-low p-space-sm gap-space-sm shadow-md transition-transform active:scale-[0.98]">
+<div class="relative h-28 rounded-lg overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Minimal slate financial analytics mobile UI dashboard for FinTrack featuring expenditure graphs, balance widgets, and crypto exchange rates on dark surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDWhqQSPaEUoonuBngWtr79CRG4aQqPjOX27M4MKH0wPHVl4cnGLZate5DwZmUfJilqFbsvyfFl8Gk2CsM2fAOH8dPnSqdIpI0jWhZKyMHvLzhHFnDd5Cgg3-_-MeQVcI1Im2xf6wyShgPy1WhT3PfQTha-n5HAbPN0ef_STTeAxEyyOzX0cgOUeHinMgPEmePG2bk_ubbbp1SYp_24ErB0mX8UJGtevhxNJjKqaHa05PSf19c9Nva"/>
+<button class="absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center text-on-surface-variant active:scale-90" onclick="toggleFavorite(event, this)" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<span class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[9px] text-secondary">6 screens</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">FinTrack</span>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs">
+<span class="font-label-code text-label-code">Minimal Slate</span>
+<span class="font-label-code text-label-code">Yesterday</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="flex flex-col rounded-xl bg-surface-container-low p-space-sm gap-space-sm shadow-md transition-transform active:scale-[0.98]">
+<div class="relative h-28 rounded-lg overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="TravelMate travel discovery interface with translucent frosted glass cards displaying flight itineraries, exotic hotel bookings, and weather badges in clean dark mode" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANKPDBe4XJJp95-pIoYwprzRT0vR2BePuGgGq43YBsMlTvXOQgw0LJCuVcmymCoMy4kFumFyQQY9piHBmG_zZju_6s0kFkCL8NRLA_iJ2paTSpZFcYsc4VCKYXpBjGXAQy5-Cx0G3TmSG2f2gnr-yMRSZTKyqbEQKRmCdxT0RsDElMLPnR_Uaef9N0PkKuTHOvtzuKXRRs6Ir2WYdhZREjJyByQD78dKnYf9aU3PjNCRdfxpS-g_vr"/>
+<button class="absolute top-1.5 right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center text-on-surface-variant active:scale-90" onclick="toggleFavorite(event, this)" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<span class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[9px] text-secondary">14 screens</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">TravelMate</span>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs">
+<span class="font-label-code text-label-code">Clean Glass</span>
+<span class="font-label-code text-label-code">3d ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption-medium text-caption-medium uppercase tracking-wider text-on-surface-variant">Live Workspace Activity</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">history</span>
+</div>
+<div class="flex flex-col rounded-xl bg-surface-container-low p-space-sm gap-space-sm shadow-sm">
+<!-- Activity 1 -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container transition-colors">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">widgets</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<p class="font-body-medium text-body-medium text-on-surface truncate">Component 'FoodCard' updated</p>
+<span class="font-label-code text-label-code text-on-surface-variant">in CampusEats • 14m ago</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary shrink-0"></span>
+</div>
+<!-- Activity 2 -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container transition-colors">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<p class="font-body-medium text-body-medium text-on-surface truncate">Design System tokens compiled</p>
+<span class="font-label-code text-label-code text-on-surface-variant">for FinTrack • 2h ago</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>
+</div>
+<!-- Activity 3 -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container transition-colors">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<p class="font-body-medium text-body-medium text-on-surface truncate">3 wireframes converted to UI</p>
+<span class="font-label-code text-label-code text-on-surface-variant">for FitnessFlow • 5h ago</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant shrink-0"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function filterProjects(type, btn) {
+    const parent = document.getElementById('project-filters');
+    const buttons = parent.querySelectorAll('button');
+    buttons.forEach(b => {
+      b.classList.remove('bg-surface-container-high', 'text-on-surface');
+      b.classList.add('text-on-surface-variant');
+    });
+    btn.classList.add('bg-surface-container-high', 'text-on-surface');
+    btn.classList.remove('text-on-surface-variant');
+  }
+
+  function toggleFavorite(e, btn) {
+    e.stopPropagation();
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon.classList.contains('text-error')) {
+      icon.classList.remove('text-error');
+      icon.textContent = 'favorite_border';
+    } else {
+      icon.classList.add('text-error');
+      icon.textContent = 'favorite';
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.6)]" data-active-classes="text-primary font-caption-medium"><div class="flex items-center justify-around h-16 px-space-xs relative"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors text-primary font-caption-medium" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-caption text-caption">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#"><span class="material-symbols-outlined text-[22px]">folder_open</span><span class="font-caption text-caption">Projects</span></a><div class="relative -top-3 flex items-center justify-center px-space-xs"><a class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-container text-on-primary shadow-[0_0_20px_-2px_rgba(124,58,237,0.5)] active:scale-95 transition-transform" data-path="create" href="#"><span class="material-symbols-outlined text-[26px]">add</span></a></div><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="components" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-caption text-caption">Library</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-caption text-caption">Profile</span></a></div></nav></body></html>
